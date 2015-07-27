@@ -19,4 +19,5 @@ As you can see on diagram, basic SmartVPN setup consists of one billing server a
 #### Options activation
 
 Connect/disconnect API actions can also return some payload to openvpn-http-hooks.
+
 This payload is used for activating/deactivating options, like Tor, I2p or Proxy for established connection.

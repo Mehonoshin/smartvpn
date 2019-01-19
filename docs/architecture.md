@@ -4,8 +4,8 @@
 
 As you can see on diagram, basic SmartVPN setup consists of one billing server and multiple VPN-node servers.
 
-* Billing - runs [Ruby on Rails application](https://github.com/smartvpnbiz/smartvpn-billing), that holds back-office, API, and user-space.
-* VPN-node - runs OpenVPN server instance, Tor, I2p routers, and [openvpn-http-hooks](https://github.com/smartvpnbiz/openvpn-http-hooks) ruby gem.
+* Billing - runs [Ruby on Rails application](https://github.com/Mehonishin/smartvpn-billing), that holds back-office, API, and user-space.
+* VPN-node - runs OpenVPN server instance, Tor, I2p routers, and [openvpn-http-hooks](https://github.com/Mehonoshin/smartvpn-http-hooks) ruby gem.
 
 #### Workflow
 

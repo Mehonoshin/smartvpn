@@ -6,4 +6,3 @@ Check out documentation in the following order:
 
 * [Architecture and worflow principles](https://github.com/Mehonoshin/smartvpn/blob/master/docs/architecture.md)
 * [Requirements](https://github.com/Mehonoshin/smartvpn/blob/master/docs/requirements.md)
-* [Installation](https://github.com/Mehonoshin/smartvpn/blob/master/docs/installation.md)

@@ -13,7 +13,7 @@ services:
   app:
     image: mexx/smartvpn-billing
     ports:
-      - "3000:3000"
+      - "80:3000"
     environment:
       - RAILS_LOG_TO_STDOUT=true
       - RAILS_ENV=production

@@ -11,7 +11,7 @@ services:
     image: redis
 
   app:
-    image: mexx/smartvpn-billing
+    image: mexx/smartvpn-billing:latest
     ports:
       - "80:3000"
     environment:
@@ -34,3 +34,16 @@ services:
         rm -f /app/tmp/pids/server.pid;
         foreman start;
       "
+
+    node:
+      image: mexx/smartvpn-node:latest
+      ports:
+        - "443:443"
+      environment:
+        - SECRET_TOKEN
+        - API_HOST=app
+        - HOSTNAME=VPN
+      depends_on:
+        - app
+
+

@@ -35,15 +35,24 @@ services:
         foreman start;
       "
 
-    node:
-      image: mexx/smartvpn-node:latest
-      ports:
-        - "443:443"
-      environment:
-        - SECRET_TOKEN
-        - API_HOST=app
-        - HOSTNAME=VPN
-      depends_on:
-        - app
+  node:
+    image: mexx/smartvpn-node:latest
+    ports:
+      - "443:443"
+    environment:
+      - SECRET_TOKEN
+      - API_HOST=app:3000
+      - HOSTNAME=VPN
+    depends_on:
+      - app
+    command: >
+      /bin/bash -c "
+        while ! nc -z app 3000;
+        do
+          echo Waiting for Billing;
+          sleep 1;
+        done;
+        /hooks/entrypoint.sh;
+      "
 
 

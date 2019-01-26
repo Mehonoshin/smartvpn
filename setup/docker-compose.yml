@@ -43,6 +43,8 @@ services:
       - SECRET_TOKEN
       - API_HOST=app:3000
       - HOSTNAME=VPN
+    cap_add:
+      - NET_ADMIN
     depends_on:
       - app
     command: >

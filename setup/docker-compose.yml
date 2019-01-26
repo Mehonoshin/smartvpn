@@ -46,7 +46,7 @@ services:
     environment:
       - SECRET_TOKEN
       - API_HOST=app:3000
-      - HOSTNAME=VPN
+      - HOSTNAME
     cap_add:
       - NET_ADMIN
     depends_on:

@@ -19,6 +19,10 @@ services:
       - RAILS_ENV=production
       - PGHOST=postgres
       - REDIS_URL=redis://redis:6379
+      - DEFAULT_HOST
+      - EMAIL_USER
+      - EMAIL_PASS
+      - EMAIL_FROM
       - SECRET_TOKEN
     depends_on:
       - postgres

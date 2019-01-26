@@ -42,7 +42,7 @@ services:
   node:
     image: mexx/smartvpn-node:latest
     ports:
-      - "443:443"
+      - "443:443/udp"
     environment:
       - SECRET_TOKEN
       - API_HOST=app:3000

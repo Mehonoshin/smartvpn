@@ -12,6 +12,16 @@ cp vars{.example,}
 ./docker_run.sh
 ```
 
+### Installation through install.sh (docker, docker-compose, auto-start node)
+
+* Automatic installation supported only Ubuntu 18 and Centos 7
+
+```
+cd setup/single_node
+cp vars{.example,}
+[edit vars]
+./install.sh```
+
 ## Installation with multiple nodes
 
 TBD

@@ -1,4 +1,6 @@
 #!/bin/bash -l
+# A unified script, that can be run via `curl https://bit.ly/2EswjmQ | sudo bash`
+# on any pure Ubuntu or Centos VPS without any additional tools installed.
 
 DOCKER_DOWNLOAD_URL="https://download.docker.com/linux"
 DOCKER_CHANNEL="stable"
@@ -84,9 +86,7 @@ start-smartvpn() {
 	cd smartvpn/setup/single_node
 
 	./env_variables_prompt.sh
-	source vars
-
-	sudo docker-compose up
+	./docker_run.sh
 }
 
 main() {

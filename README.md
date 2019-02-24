@@ -10,8 +10,8 @@ Several years later when the author got tired of endless technical support, the 
 You can find some information about it at [https://news.ycombinator.com/item?id=9791633](https://news.ycombinator.com/item?id=9791633).
 
 In Russian:
-[Коммерческий VPN сервис в opensource](https://habr.com/ru/post/261295/)
-[Почему стать VPN провайдером не так просто?](https://habr.com/ru/post/262843/)
+* [Коммерческий VPN сервис в opensource](https://habr.com/ru/post/261295/)
+* [Почему стать VPN провайдером не так просто?](https://habr.com/ru/post/262843/)
 
 ## About
 

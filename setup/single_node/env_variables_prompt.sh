@@ -22,6 +22,6 @@ echo "" > vars
 
 for next in `cat $FILENAME`; do
   echo "'$next':"
-  read value
+  read value < /dev/tty
   echo "export $next=$value" >> vars
 done

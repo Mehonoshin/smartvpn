@@ -55,7 +55,7 @@ install-requirements() {
 	esac
 }
 
-add-current-user-to-docker-group(){
+add-current-user-to-docker-group() {
 	sudo groupadd -f docker
 	sudo usermod -aG docker $USER
 	. ~/.bashrc

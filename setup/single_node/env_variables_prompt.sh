@@ -22,6 +22,8 @@ echo "" > vars
 
 for next in `cat $FILENAME`; do
   echo "'$next':"
+  # We explicitly use `/dev/tty` to bypass the problem with Curl:
+  # https://stackoverflow.com/questions/6561072/why-wont-bash-wait-for-read-when-used-with-curl
   read value < /dev/tty
   echo "export $next=$value" >> vars
 done

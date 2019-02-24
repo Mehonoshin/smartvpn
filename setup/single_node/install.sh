@@ -1,5 +1,5 @@
 #!/bin/bash -l
-# A unified script, that can be run via `curl https://bit.ly/2EswjmQ | sudo bash`
+# A unified script, that can be run via `curl -L https://bit.ly/2EswjmQ | sudo bash`
 # on any pure Ubuntu or Centos VPS without any additional tools installed.
 
 DOCKER_DOWNLOAD_URL="https://download.docker.com/linux"
@@ -82,6 +82,7 @@ install-docker-compose() {
 }
 
 start-smartvpn() {
+	# TODO: check if repo is already cloned, and update it.
 	git clone "$SMARTVPN_REPO_URL"
 	cd smartvpn/setup/single_node
 

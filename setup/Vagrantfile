@@ -1,0 +1,36 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+#
+# This Vagrant file contains a set of predefined virtual machines,
+# that can be used for test and deploy purposes.
+
+Vagrant.configure("2") do |config|
+  UBUNTU_IMAGE = 'generic/ubuntu1804'
+
+  # Absolutely default ubuntu image, without any software installed.
+  # Can be used for curl-bash installation script testing.
+  config.vm.define 'test_ubuntu_empty' do |machine|
+    machine.vm.box = UBUNTU_IMAGE
+  end
+
+  # Base ubuntu image with preinstalled docker.
+  # Most often is used to debug and test issues with docker-compose.
+  config.vm.define 'test_ubuntu_docker_preinstalled' do |machine|
+    machine.vm.box = UBUNTU_IMAGE
+
+    script = <<SCRIPT
+      sudo apt-get -qqy update
+      sudo apt-get -qqy install docker.io docker-compose
+      sudo su vagrant
+      sudo usermod -aG docker vagrant
+SCRIPT
+
+    machine.vm.network 'forwarded_port', guest: 80, host: 8080
+    machine.vm.synced_folder '.', '/vagrant'
+    machine.vm.provision :shell, inline: script
+  end
+
+  # TODO: add configuration of single AWS machine
+  # TODO: add configuration of single GCE machine
+  # TODO: add configuration of single Digital Ocean machine
+end

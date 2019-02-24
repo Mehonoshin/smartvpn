@@ -1,7 +1,0 @@
-export DEFAULT_HOST=
-export HOSTNAME=
-export EMAIL_USER=
-export EMAIL_PASS=
-export EMAIL_FROM=
-export SECRET_TOKEN=
-

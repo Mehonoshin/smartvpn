@@ -5,6 +5,7 @@ DOCKER_CHANNEL="stable"
 DOCKER_REPO_FILE="docker-ce.repo"
 DOCKER_COMPOSE_DOWNLOAD_URL="https://github.com/docker/compose/releases/download"
 DOCKER_COMPOSE_VERSION="1.23.2"
+SMARTVPN_REPO_URL="https://github.com/Mehonoshin/smartvpn"
 
 get-distribution() {
 	if [ -r /etc/os-release ]; then
@@ -78,8 +79,13 @@ install-docker-compose() {
 	sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 }
 
-start-vpnvilling() {
+start-smartvpn() {
+	git clone "$SMARTVPN_REPO_URL"
+	cd smartvpn/setup/single_node
+
+	./env_variables_prompt.sh
 	source vars
+
 	sudo docker-compose up
 }
 
@@ -89,7 +95,7 @@ main() {
 		install-docker
 		install-docker-compose
 	fi
-	start-vpnvilling
+	start-smartvpn
 }
 
 main

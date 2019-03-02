@@ -30,6 +30,18 @@
  * 1. General Elements
  *--------------------------------------------------
  */
+
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} 
+
+main {
+  flex-grow: 1;
+}
 #navigation {
   /* 1. Navigation wrapper */
 }
@@ -44,6 +56,10 @@
 }
 #footer {
   /* 5. Footer wrapper */
+
+}
+footer{
+  flex-shrink: 0;
 }
 /*
  * --------------------------------------------------

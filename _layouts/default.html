@@ -43,12 +43,14 @@
   </head>
 
   <body class="page page-index-static">
-    {% include header.html %}
-    <div id="content">
-      <div class="container">
-        {{ content }}
+      {% include header.html %}
+      <main>
+      <div id="content">
+        <div class="container">
+          {{ content }}
+        </div>
       </div>
-    </div>
+    </main>
     {% include content_below.html %}
     {% include footer.html %}
   </body>

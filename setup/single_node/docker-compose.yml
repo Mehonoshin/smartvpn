@@ -53,10 +53,8 @@ services:
       - app
     volumes:
       - type: volume
-        source: pki
-        target: /hooks/pki/keys
-        volume:
-          nocopy: true
+        source: workdir
+        target: /hooks
     command: >
       /bin/bash -c "
         while ! nc -z app 3000;
@@ -67,4 +65,4 @@ services:
         /hooks/entrypoint.sh;
       "
 volumes:
-  pki:
+  workdir:

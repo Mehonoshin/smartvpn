@@ -51,6 +51,12 @@ services:
       - NET_ADMIN
     depends_on:
       - app
+    volumes:
+      - type: volume
+        source: pki
+        target: /hooks/pki/keys
+        volume:
+          nocopy: true
     command: >
       /bin/bash -c "
         while ! nc -z app 3000;
@@ -60,3 +66,5 @@ services:
         done;
         /hooks/entrypoint.sh;
       "
+volumes:
+  pki:

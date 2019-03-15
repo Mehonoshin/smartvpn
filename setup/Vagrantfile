@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
   # Can be used for curl-bash installation script testing.
   config.vm.define 'test_ubuntu_empty' do |machine|
     machine.vm.box = UBUNTU_IMAGE
+    machine.vm.network 'forwarded_port', guest: 80, host: 8080
   end
 
   # Base ubuntu image with preinstalled docker.

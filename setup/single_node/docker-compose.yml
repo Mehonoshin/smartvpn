@@ -22,8 +22,11 @@ services:
       - DEFAULT_HOST
       - EMAIL_USER
       - EMAIL_PASS
-      - EMAIL_FROM
+      - EMAIL_ADDRESS
+      - EMAIL_PORT
+      - EMAIL_TLS
       - SECRET_TOKEN
+      - ROLLBAR_ACCESS_TOKEN
     depends_on:
       - postgres
       - redis
@@ -45,7 +48,7 @@ services:
       - "443:443/udp"
     environment:
       - SECRET_TOKEN
-      - API_HOST=app:3000
+      - API_HOST
       - HOSTNAME
     cap_add:
       - NET_ADMIN
